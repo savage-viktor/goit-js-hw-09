@@ -7,10 +7,13 @@ stopButton.addEventListener("click", stopFn)
 
 function startFn() {
     timerId = setInterval(chengeBgColor, 1000);
+    startButton.disabled = true
 }
 
 function stopFn() {
     clearInterval(timerId);
+    startButton.disabled = false
+
 }
 
 function getRandomHexColor() {
