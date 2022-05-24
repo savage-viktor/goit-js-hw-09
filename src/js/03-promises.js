@@ -29,8 +29,8 @@ function createDelaysArray(amount, startDelay, delayStep) {
 function runAllPromises(delaysArray) {
   delaysArray.map((delay, index) => {
     createPromise(index + 1, delay)
-      .then(res => { Notiflix.Notify.success(res) })
-      .catch(err => { Notiflix.Notify.failure(err) })
+      .then(res => { Notiflix.Notify.success(res); console.log(res) })
+      .catch(err => { Notiflix.Notify.failure(err); console.log(err) })
   })
 }
 
