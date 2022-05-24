@@ -11,12 +11,12 @@ function onSubmit(event) {
   const delayStep = Number(event.currentTarget.elements.step.value);
   const amount = Number(event.currentTarget.elements.amount.value);
 
-  const delaysArray = createDelaysArray(amount, firstDelay, delayStep)
+  const delaysArray = createDelaysArray(firstDelay, delayStep, amount)
 
   runAllPromises(delaysArray)
 }
 
-function createDelaysArray(amount, firstDelay, delayStep) {
+function createDelaysArray(firstDelay, delayStep, amount) {
   const delaysArray = [];
   for (let i = 0; i < amount; i += 1) {
     let delay = firstDelay + delayStep * i
